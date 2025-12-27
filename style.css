@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(#222 1px, transparent 1px),
+    linear-gradient(90deg, #222 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-color: #0f0f0f;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eaeaea;
+}
+
+/* ===== CARD ===== */
+.card {
+  width: 92%;
+  max-width: 430px;
+  background: #161616;
+  padding: 32px 24px;
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+  text-align: center;
+  animation: enter 0.8s ease;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== TITLE ===== */
+h1 {
+  color: #f5c400;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.ayah {
+  font-size: 14px;
+  color: #cfcfcf;
+  margin-bottom: 24px;
+}
+
+/* ===== ACCORDION ===== */
+input {
+  display: none;
+}
+
+.accordion {
+  display: block;
+  margin: 14px 0;
+  padding: 14px;
+  border: 2px solid #f5c400;
+  border-radius: 30px;
+  color: #f5c400;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.accordion:hover {
+  background: rgba(245,196,0,0.08);
+  transform: translateY(-2px);
+}
+
+/* ===== PANEL ===== */
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.4s ease;
+}
+
+input:checked + .accordion + .panel {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== LINKS ===== */
+.panel a {
+  display: block;
+  margin: 8px 0;
+  padding: 12px;
+  color: #f5c400;
+  text-decoration: none;
+  border: 1px solid #333;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.panel a:hover {
+  background: #f5c400;
+  color: #111;
+}
+
+/* ===== S1 / S2 EFFECT ===== */
+.special {
+  position: relative;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(245,196,0,0); }
+  50% { box-shadow: 0 0 18px rgba(245,196,0,0.45); }
+  100% { box-shadow: 0 0 0 rgba(245,196,0,0); }
+}
+
+.soon {
+  padding: 10px;
+  color: #bbb;
+  font-size: 14px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .accordion { font-size: 16px; }
+  .panel a { font-size: 15px; padding: 14px; }
+}
