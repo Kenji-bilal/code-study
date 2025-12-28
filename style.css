@@ -136,3 +136,28 @@ footer {
   .accordion { font-size: 16px; }
   .panel a { font-size: 15px; padding: 14px; }
 }
+.tp-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tp-list {
+  min-width: 140px;
+}
+
+.tp-list button {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.code-box {
+  flex: 1;
+  max-height: 70vh;
+  overflow: auto;
+  border-radius: 10px;
+}
+
