@@ -16,11 +16,9 @@
 
   <!-- حساباتي -->
   <input type="checkbox" id="acc-social">
-  <label for="acc-social" class="accordion">
-    حساباتي
-  </label>
+  <label for="acc-social" class="accordion">حساباتي</label>
   <div class="panel">
-    <a href="https://web.facebook.com/profile.php?id=100068041128436&mibextid=ZbWKwL&_rdc=1&_rdr" target="_blank">Facebook</a>
+    <a href="https://web.facebook.com/profile.php?id=100068041128436" target="_blank">Facebook</a>
     <a href="https://www.instagram.com/bilal__maarouf/" target="_blank">Instagram</a>
     <a href="https://www.reddit.com/user/bilal_maarouf/" target="_blank">Reddit</a>
     <a href="https://x.com/Kenji_MAAROUF" target="_blank">X (Twitter)</a>
@@ -28,44 +26,79 @@
 
   <!-- طلبة S1 -->
   <input type="checkbox" id="acc-s1">
-  <label for="acc-s1" class="accordion special">
-    طلبة S1
-  </label>
- <div class="panel">
-  <a href="s1/algorithmique-c1/">Algorithmique & C 1</a>
-  <a href="s1/algebre/">Algèbre</a>
-  <a href="s1/analyse/">Analyse</a>
-  <a href="s1/mtu/">MTU</a>
-  <a href="s1/architecture/">Architecture des Ordinateurs</a>
-  <a href="s1/electronique-numerique/">Électronique Numérique</a>
-  <a href="s1/python1/">Programmation Python 1</a>
-</div>
-
-
+  <label for="acc-s1" class="accordion special">طلبة S1</label>
+  <div class="panel">
+    <a href="s1/algorithmique-c1/">Algorithmique & C 1</a>
+    <a href="s1/algebre/">Algèbre</a>
+    <a href="s1/analyse/">Analyse</a>
+    <a href="s1/mtu/">MTU</a>
+    <a href="s1/architecture/">Architecture des Ordinateurs</a>
+    <a href="s1/electronique-numerique/">Électronique Numérique</a>
+    <a href="s1/python1/">Programmation Python 1</a>
+  </div>
 
   <!-- أفكاري -->
   <input type="checkbox" id="acc-ideas">
-  <label for="acc-ideas" class="accordion">
-    أفكاري
-  </label>
+  <label for="acc-ideas" class="accordion">أفكاري</label>
   <div class="panel">
     <p class="soon">تبسيط مفاهيم + نصائح دراسية</p>
   </div>
 
   <!-- الأكواد -->
   <input type="checkbox" id="acc-code">
-  <label for="acc-code" class="accordion">
-    أكواد C / Python
-  </label>
+  <label for="acc-code" class="accordion">أكواد C / Python</label>
+
   <div class="panel">
-    <p class="soon">سيتم تنظيمها لاحقًا</p>
+
+    <!-- شريط الحالة -->
+    <div class="state">
+      <span id="state-lang"></span>
+      <span id="state-level"></span>
+    </div>
+
+    <!-- اختيار اللغة -->
+    <div id="step-lang" class="lang-row">
+      <button class="step-btn" onclick="selectLang('c')">لغة C</button>
+      <button class="step-btn" onclick="selectLang('py')">Python</button>
+    </div>
+
+    <!-- اختيار المستوى -->
+    <div id="step-level" class="hidden">
+      <button class="step-btn" onclick="selectLevel('easy')">سهل</button>
+      <button class="step-btn" onclick="selectLevel('medium')">متوسط</button>
+      <button class="step-btn" onclick="selectLevel('hard')">صعب</button>
+      <button class="back-btn" onclick="goTo('lang')">⬅ رجوع للغة</button>
+    </div>
+
+    <!-- السؤال -->
+    <div id="step-question" class="hidden">
+      <p id="question-text"></p>
+      <button class="step-btn solve" onclick="showSolution()">حل</button>
+      <button class="back-btn" onclick="goTo('level')">⬅ رجوع للمستوى</button>
+    </div>
+
+    <!-- الحل -->
+    <pre id="solution" class="hidden"><code></code></pre>
+
+
   </div>
 
-  <footer>
-    Made with care by <strong>Bilal Maarouf</strong>
-  </footer>
+  <div class="signature-wrap">
+  <div class="personal-signature">
+    Made with care by Bilal Maarouf.
+  </div>
+
+  <div class="epic-signature">
+    <span>Where thinking comes</span>
+    <span>before code.</span>
+  </div>
+</div>
+
+
+
 
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
